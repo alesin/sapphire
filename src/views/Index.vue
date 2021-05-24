@@ -4,7 +4,7 @@
       {{ title }}
     </h2>
     <!-- //? FEED: Using Vuex Store -->
-    <feed :feed="feed" />
+    <Feed :feed="feed" />
   </div>
 </template>
 

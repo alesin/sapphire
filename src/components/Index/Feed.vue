@@ -10,7 +10,7 @@
         <h2 class="list__username">
           {{ feedItem.username }}
         </h2>
-        <meal 
+        <Meal 
           v-if="feedItem.object_type == 'meal'" 
           :foods="feedItem.food_items"
         />
