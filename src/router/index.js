@@ -15,7 +15,7 @@ const router = new Router({
       name: 'Home',
       component: Index,
       meta: {
-        title: 'Accueil',
+        title: 'Sapphire',
       },
     },
   ],

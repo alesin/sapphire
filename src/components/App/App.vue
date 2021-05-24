@@ -23,7 +23,7 @@ export default {
   name: 'App',
   data() {
     return {
-      title: 'Welcome to my starter !',
+      title: 'Welcome to Sapphire!',
     };
   },
 };

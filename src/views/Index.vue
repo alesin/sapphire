@@ -3,37 +3,49 @@
     <h2 class="page-title">
       {{ title }}
     </h2>
-    <articles :articles="articles" />
+    <!-- //? FEED: Using Vuex Store -->
+    <feed :feed="feed" />
   </div>
 </template>
 
 <script>
-import api from '@API';
+// import api from '@API';
+import { mapActions, mapState } from 'vuex';
 
-import Articles from '@Component/Index/Articles.vue';
+import Feed from '@Component/Index/Feed.vue';
 
 import './Index.scss';
 
 export default {
   name: 'Index',
   components: {
-    Articles,
+    Feed,
   },
   data() {
     return {
       title: 'Index page !',
-      articles: [],
     };
   },
+  computed: {
+    ...mapState({
+      feed: state => state.feed,
+    }),
+  },
   created() {
-    api
-      .get(`http://jsonplaceholder.typicode.com/posts`)
-      .then(response => {
-        this.articles = response.data;
-      })
-      .catch(e => {
-        console.error(e);
-      });
+    // api
+    //   .get(`http://jsonplaceholder.typicode.com/posts`)
+    //   .then(response => {
+    //     this.articles = response.data;
+    //   })
+    //   .catch(e => {
+    //     console.error(e);
+    //   });
+    this.getFeed();
+  },
+  methods: {
+    ...mapActions({
+      getFeed: 'GET_FEED',
+    }),
   },
 };
 </script>

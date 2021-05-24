@@ -1,0 +1,11 @@
+@import '@MasterStyle';
+
+.list {
+  &__username {
+    color: $article-title-color;
+  }
+
+  &__meal {
+    color: $article-content-color;
+  }
+}
