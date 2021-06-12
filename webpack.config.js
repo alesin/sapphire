@@ -36,8 +36,9 @@ const config = {
         loader: 'babel-loader',
         include: [path.join(__dirname, 'src')],
       },
+      // ******   Load most potential styling languages: CSS, SASS, SCSS    ******
       {
-        test: /\.scss$/,
+        test: /\.((c|sa|sc)ss)$/,
         loader: 'vue-style-loader!css-loader!resolve-url-loader!sass-loader',
       },
       {
