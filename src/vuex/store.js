@@ -9,6 +9,9 @@ const storeConfig = {
   getters: {},
   state: {
     feed: [],
+    notifications: 0,
+    rubies: 0,
+    drawer: false,
   },
   mutations: {
     SET_FEED: (state, payload) => {
