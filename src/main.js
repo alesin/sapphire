@@ -1,6 +1,9 @@
 import Vue from 'vue';
+import Vuetify from 'vuetify';
 import Vuex from 'vuex';
 import VueCookie from 'vue-cookie';
+
+import './plugins/vuetify';
 
 import router from './router';
 import App from '@Component/App/App.vue';
@@ -22,6 +25,11 @@ if (enableAnalytics) {
 
 Vue.config.productionTip = false;
 
+Vue.use(Vuetify, {
+  options: {
+    customProperties: true,
+  },
+});
 Vue.use(Vuex);
 Vue.use(VueCookie);
 
