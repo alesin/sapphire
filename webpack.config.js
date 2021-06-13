@@ -2,7 +2,7 @@ const { VueLoaderPlugin } = require('vue-loader');
 const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const env = process.env.NODE_ENV;
@@ -109,8 +109,8 @@ const config = {
 
 if (minify) {
   config.optimization.minimizer = [
-    new UglifyJsPlugin({
-      cache: true,
+    new TerserPlugin({
+      cache: true, //^ [https://gitlab.eeecs.qub.ac.uk/40150069/FinalProject_Website/tree/d89387dbf0f5c50c9662ead284bf7ffb8cf9a646/node_modules/terser-webpack-plugin#cache]
       parallel: true,
     }),
   ];
